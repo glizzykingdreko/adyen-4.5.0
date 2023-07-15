@@ -1,0 +1,15 @@
+# Ignore the .gitignore file
+.gitignore
+
+# Ignore potential editor/IDE specific settings
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore any hidden files (these usually contain config for different tools and IDE)
+.*
