@@ -17,7 +17,7 @@ Check my repo for [adyen-4.4.1](https://github.com/glizzykingdreko/adyen-4.4.1) 
 
 ## What changes from the previous version?
 Not much, a new calculation based on the encoded protected header has been added and it must be passed in the hmac (tag key).
-Take a look [here]()
+Take a look [here](https://github.com/glizzykingdreko/adyen-4.5.0/blob/fde2c034cf4bf3e7d1bcb211eabdddef8418080a/src/Adyen.js#L67) for more information.
 
 ## Resources
 
