@@ -63,7 +63,8 @@ class Adyen {
         let encrypted = cipher.update(_plaintext);
         let finalBuffer = cipher.final();
         encrypted = Buffer.concat([encrypted, finalBuffer]);
-
+        
+        // Difference between 4.5.0 and 4.4.1 is this part
         let f = protectedHeader2.length << 3;
         let d = Math.floor(f / bt);
         let h = f % bt;
@@ -73,6 +74,8 @@ class Adyen {
 
         // Calculate HMAC
         const hmac = crypto.createHmac('sha512', Buffer.from(hmacKey));
+        
+        // In the 4.5.0 we wanna pass the 'y' value in the hmac as well
         hmac.update(Buffer.concat([protectedHeader2, _iv, encrypted, y]));
         const hmacDigest = hmac.digest().slice(0, 32);  // Get the first 32 bytes
 
